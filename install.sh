@@ -48,7 +48,13 @@ sh ~/.vim_runtime/install_basic_vimrc.sh
 
 # NVM 을 install합니다.
 echo "nodejs 버전관리 프로그램인 nvm을 설치합니다."
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | zsh
+
+# RVM을 install 합니다.
+echo "ruby 버전관리 프로그램인 rvm을 설치합니다."
+curl -sSL https://get.rvm.io | bash -s stable
+
+xcode-select --install
 
 # zshrcCustom의 셋업을 불러옵니다
 echo "source ~/.dotfiles.mac/zshrcCustom" >> ~/.zshrc
@@ -68,7 +74,6 @@ echo "2. 폰트 및 터미널 색상변경"
 echo '3. .zshrc의 theme내용 변경 `ZSH_THEME="powerlevel9k/powerlevel9k"`'
 echo '4. .vimrc의 인스톨을 위하 1회 실행'
 # 터미널 프로파일 들어가서 ~/themes/iterm2/mbadolato-iTerm2-Color-Schemes-d6098c7/terminal/Solarized\ Dark.terminal  이걸 가져오기 하면 됨
-
 
 
 
