@@ -51,8 +51,12 @@ echo "nodejs 버전관리 프로그램인 nvm을 설치합니다."
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | zsh
 
 # RVM을 install 합니다.
-echo "ruby 버전관리 프로그램인 rvm을 설치합니다."
-curl -sSL https://get.rvm.io | bash -s stable
+echo "ruby 버전관리 프로그램인 rbenv을 설치합니다."
+brew update
+brew install rbenv
+brew install ruby-build
+brew upgrade rbenv ruby-build
+rbenv rehash
 
 xcode-select --install
 
@@ -60,11 +64,12 @@ xcode-select --install
 echo "source ~/.dotfiles.mac/zshrcCustom" >> ~/.zshrc
 source ~/.zshrc
 
+
 # .gitconfig를 옮깁니다.
 ln -s ~/.dotfiles.mac/gitconfig ~/.gitconfig
 
 # powerlevel 9k install
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/themes/powerlevel9k
 # Then edit your ~/.zshrc and set ZSH_THEME="powerlevel9k/powerlevel9k".
 
 
