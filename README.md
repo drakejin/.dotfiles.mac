@@ -32,3 +32,20 @@ $ ./.dotfiles/.install.sh
 3. zshrc
 4. terminal utilities(fzf, ag, tree)
 5. docker, docker-compose
+
+# 설치해야할 프로그램 목록
+- Chrome
+- slack
+- slack - 이 방 저 방 들어가기
+- spectacle
+- Google Drive
+- 1Password
+- Notion
+- TablePlus
+- Toolbox
+- Docker
+- rdm
+- MicroOffice 365
+- xcode 다운로드
+- VSCode
+- VSCode - 각종 플러그인 인스톨 하기
