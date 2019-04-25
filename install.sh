@@ -1,5 +1,3 @@
-# install brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew update
 brew install git vim tree tmux tig fzf the_silver_searcher zsh-syntax-highlighting wget
@@ -36,29 +34,12 @@ tar xvf master.tar.gz
 rm master.tar.gz
 cd ~/
 
-#font installation
-brew install macvim --env-std --with-override-system-vim
-
 
 echo "vimrc를 설치합니다"
 # https://github.com/amix/vimrc
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_basic_vimrc.sh
 
-
-# NVM 을 install합니다.
-echo "nodejs 버전관리 프로그램인 nvm을 설치합니다."
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | zsh
-
-# RVM을 install 합니다.
-echo "ruby 버전관리 프로그램인 rbenv을 설치합니다."
-brew update
-brew install rbenv
-brew install ruby-build
-brew upgrade rbenv ruby-build
-rbenv rehash
-
-xcode-select --install
 
 # zshrcCustom의 셋업을 불러옵니다
 echo "source ~/.dotfiles.mac/zshrcCustom" >> ~/.zshrc
