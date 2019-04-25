@@ -1,14 +1,23 @@
 
 brew update
-brew install git vim tree tmux tig fzf the_silver_searcher zsh-syntax-highlighting wget
+brew install git vim tree tmux tig fzf the_silver_searcher zsh zsh-completions zsh-syntax-highlighting wget
 brew upgrade vim
 brew cask install iterm2
-
 
 # zsh install
 export ZSH="$HOME/.oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /bin/zsh
+
+# zsh 플러그인
+# zsh-syntax-highlighting: 명령어 하이라이팅
+# zsh-autosuggestions: 자동완성 플러그인
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+echo "plugins=(git zsh-syntax-highlighting zsh-autosuggestions)" >> ~/.zshrc
+
+echo "source ~/.dotfiles.mac/zshrcCustom" >> ~/.zshrc
+
 
 # Powerline font
 git clone https://github.com/powerline/fonts.git --depth=1
@@ -35,17 +44,6 @@ rm master.tar.gz
 cd ~/
 
 
-echo "vimrc를 설치합니다"
-# https://github.com/amix/vimrc
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_basic_vimrc.sh
-
-
-# zshrcCustom의 셋업을 불러옵니다
-echo "source ~/.dotfiles.mac/zshrcCustom" >> ~/.zshrc
-source ~/.zshrc
-
-
 # .gitconfig를 옮깁니다.
 ln -s ~/.dotfiles.mac/gitconfig ~/.gitconfig
 
@@ -63,3 +61,4 @@ echo '4. .vimrc의 인스톨을 위하 1회 실행'
 
 
 
+source ~/.zshrc
