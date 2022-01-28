@@ -8,8 +8,5 @@ echo 'eval "$(goenv init -)"' >> ~/.zshrc
 echo 'export PATH="$GOROOT/bin:$PATH"' >> ~/.zshrc
 echo 'export PATH="$GOPATH/bin:$PATH"' >> ~/.zshrc
 
-goenv install 1.12.4
-goenv global 1.12.4
-
 source ~/.zshrc
 
